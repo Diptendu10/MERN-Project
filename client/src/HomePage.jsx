@@ -60,7 +60,7 @@ const user = JSON.parse(
   try {
 
     const response = await axios.get(
-      "http://localhost:5000/api/cars"
+      `${import.meta.env.VITE_API_URL}/api/cars`
     );
 
     const cars = response.data;

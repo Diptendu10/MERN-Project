@@ -38,7 +38,7 @@ export default function AdminPage() {
     try {
 
       const response = await axios.get(
-        "http://localhost:5000/api/cars"
+        `${import.meta.env.VITE_API_URL}/api/cars`
       );
 
       setCars(response.data);
@@ -56,7 +56,7 @@ export default function AdminPage() {
     try {
 
       const response = await axios.get(
-        "http://localhost:5000/api/bookings"
+        `${import.meta.env.VITE_API_URL}/api/bookings`
       );
 
       setBookings(response.data);
@@ -126,7 +126,7 @@ export default function AdminPage() {
     );
 
     await axios.post(
-      "http://localhost:5000/api/cars/add",
+      `${import.meta.env.VITE_API_URL}/api/cars/add`,
       data,
       {
         headers: {
@@ -168,7 +168,7 @@ export default function AdminPage() {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/cars/${id}`
+        `${import.meta.env.VITE_API_URL}/api/cars/${id}`
       );
 
       alert("Car Deleted");
@@ -192,7 +192,7 @@ export default function AdminPage() {
     try {
 
       await axios.put(
-        `http://localhost:5000/api/cars/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/cars/${id}`,
         {
           price: newPrice,
         }
@@ -220,7 +220,7 @@ export default function AdminPage() {
   const cancelBooking = async (bookingId) => {
   try {
     const response = await axios.put(
-      `http://localhost:5000/api/bookings/cancel/${bookingId}`
+      `${import.meta.env.VITE_API_URL}/api/bookings/cancel/${bookingId}`
     );
 
     alert(response.data.message);

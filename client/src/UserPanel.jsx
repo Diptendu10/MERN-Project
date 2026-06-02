@@ -19,7 +19,7 @@ export default function UserPanel() {
     try {
 
       const response = await axios.put(
-        `http://localhost:5000/api/bookings/cancel/${bookingId}`
+        `${import.meta.env.VITE_API_URL}/api/bookings/cancel/${bookingId}`
       );
 
       alert(response.data.message);
@@ -41,7 +41,7 @@ export default function UserPanel() {
     try {
 
       const response = await axios.get(
-        `http://localhost:5000/api/bookings/user/${user._id}`
+        `${import.meta.env.VITE_API_URL}/api/bookings/user/${user._id}`
       );
 
       setBookings(response.data);

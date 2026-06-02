@@ -30,7 +30,7 @@ const [bookingData, setBookingData] =
     try {
 
       const response = await axios.get(
-        "http://localhost:5000/api/cars"
+        `${import.meta.env.VITE_API_URL}/api/cars`
       );
 
       setCars(response.data);
@@ -135,7 +135,7 @@ const [bookingData, setBookingData] =
     try {
 
       const response = await axios.post(
-  "http://localhost:5000/api/bookings/create",
+  `${import.meta.env.VITE_API_URL}/api/bookings/create`,
   {
     userId: currentUser._id,
     userName: currentUser.name,

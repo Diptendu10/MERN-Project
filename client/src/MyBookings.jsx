@@ -14,7 +14,7 @@ export default function MyBookings() {
     try {
 
       const response = await axios.get(
-        `http://localhost:5000/api/bookings/user/${user._id}`
+        `${import.meta.env.VITE_API_URL}/api/bookings/user/${user._id}`
       );
 
       setBookings(response.data);

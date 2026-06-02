@@ -17,7 +17,18 @@ app.use('/uploads', express.static('uploads'));
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
-app.use(cors());
+// app.use(cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://car-rental-frontend.onrender.com"
+    ],
+    credentials: true
+  })
+);
 app.use(express.json());
 
 app.use("/api/users", userRoutes);

@@ -28,7 +28,7 @@ const handleLogin = async (e) => {
     if (loginType === "user") {
 
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        `${import.meta.env.VITE_API_URL}/api/users/login`,
         formData
       );
 
@@ -60,7 +60,7 @@ window.location.href = "/";
     else {
 
       const response = await axios.post(
-        "http://localhost:5000/api/admin/login",
+        `${import.meta.env.VITE_API_URL}/api/admin/login`,
         formData
       );
 
