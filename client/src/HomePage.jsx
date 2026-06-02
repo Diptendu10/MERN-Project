@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 export default function HomePage() {
   const navigate = useNavigate();
@@ -124,108 +124,125 @@ alert(
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="bg-black text-white px-8 py-4 flex justify-between items-center shadow-lg">
-        <h1 className="text-3xl font-bold">Car 69</h1>
+<nav className="bg-black text-white px-8 py-4 flex justify-between items-center shadow-lg">
 
-        <div className="space-x-6 text-lg">
-          <a href="#" className="hover:text-yellow-400">
-            Home
-          </a>
-          <div className="relative inline-block">
-  
-  <button
-    onClick={() => setShowBrands(!showBrands)}
-    className="hover:text-yellow-400"
-  >
-    Cars ▼
-  </button>
+  <h1 className="text-3xl font-bold">
+    Car 69
+  </h1>
 
-  {showBrands && (
-  <div className="absolute top-10 left-0 bg-white text-black rounded-2xl shadow-2xl w-52 z-50 overflow-hidden">
+  <div className="space-x-6 text-lg">
 
-    <a
-      href="/cars/rollsroyce"
-      className="block px-5 py-3 hover:bg-gray-100"
+    <Link
+      to="/"
+      className="hover:text-yellow-400"
     >
-      Rolls Royce
-    </a>
+      Home
+    </Link>
 
-    <a
-      href="/cars/bugatti"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      Bugatti
-    </a>
+    <div className="relative inline-block">
 
-    <a
-      href="/cars/ferrari"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      Ferrari
-    </a>
+      <button
+        onClick={() => setShowBrands(!showBrands)}
+        className="hover:text-yellow-400"
+      >
+        Cars ▼
+      </button>
 
-    <a
-      href="/cars/porsche"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      Porsche
-    </a>
+      {showBrands && (
 
-    <a
-      href="/cars/jaguar"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      Jaguar
-    </a>
+        <div className="absolute top-10 left-0 bg-white text-black rounded-2xl shadow-2xl w-52 z-50 overflow-hidden">
 
-    <a
-      href="/cars/audi"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      Audi
-    </a>
+          <Link
+            to="/cars/rollsroyce"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Rolls Royce
+          </Link>
 
-    <a
-      href="/cars/mercedes"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      Mercedes
-    </a>
+          <Link
+            to="/cars/bugatti"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Bugatti
+          </Link>
 
-    <a
-      href="/cars/bmw"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      BMW
-    </a>
+          <Link
+            to="/cars/ferrari"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Ferrari
+          </Link>
 
-    <a
-      href="/cars/mg"
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      MG
-    </a>
+          <Link
+            to="/cars/porsche"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Porsche
+          </Link>
 
-    <a
-      href="/cars/skoda"
-      className="block px-5 py-3 hover:bg-gray-100"
+          <Link
+            to="/cars/jaguar"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Jaguar
+          </Link>
+
+          <Link
+            to="/cars/audi"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Audi
+          </Link>
+
+          <Link
+            to="/cars/mercedes"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Mercedes
+          </Link>
+
+          <Link
+            to="/cars/bmw"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            BMW
+          </Link>
+
+          <Link
+            to="/cars/mg"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            MG
+          </Link>
+
+          <Link
+            to="/cars/skoda"
+            className="block px-5 py-3 hover:bg-gray-100"
+          >
+            Skoda
+          </Link>
+
+        </div>
+      )}
+    </div>
+
+    <Link
+      to="/about"
+      className="hover:text-yellow-400"
     >
-      Skoda
-    </a>
+      About
+    </Link>
+
+    <Link
+      to="/contact"
+      className="hover:text-yellow-400"
+    >
+      Contact
+    </Link>
 
   </div>
-)}
-</div>
-          <a href="/about" className="hover:text-yellow-400">
-             About
-          </a>
-          <a href="/contact" className="hover:text-yellow-400">
-          Contact
-        </a>
-        </div>
 
-        {
-  user ? (
+  {user ? (
 
     <button
       onClick={() => navigate("/userpanel")}
@@ -243,9 +260,9 @@ alert(
       Login
     </button>
 
-  )
-}
-      </nav>
+  )}
+
+</nav>
 
       {/* Hero Section */}
       <section className="bg-black text-white py-24 px-10 text-center">
