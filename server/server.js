@@ -18,7 +18,7 @@ app.use('/uploads', express.static('uploads'));
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 // app.use(cors());
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use(
   cors({
